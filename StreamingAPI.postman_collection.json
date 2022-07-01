@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "7715e070-c44e-466d-bd81-bcc62db66d97",
+		"name": "StreamingAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21742638"
+	},
+	"item": [
+		{
+			"name": "Tracks",
+			"item": [
+				{
+					"name": "Get all tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/GetAllTracks",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"GetAllTracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get top tracks by artist (by name)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/GetTopTracksByArtist?name=Platina",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"GetTopTracksByArtist"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Platina",
+									"description": "Name of the artist"
+								},
+								{
+									"key": "name",
+									"value": "Dora",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find tracks with similar names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/FindSimilar?name=Mo",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"FindSimilar"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Mo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get track by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/GetTrack?name=Mox",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"GetTrack"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Mox"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new track",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/AddTrack?trackName=bobr&artistName=Kli-Kli",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"AddTrack"
+							],
+							"query": [
+								{
+									"key": "trackName",
+									"value": "bobr"
+								},
+								{
+									"key": "artistName",
+									"value": "Kli-Kli"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new track with several artists",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  \"ivan zolo 2003\", \"ivan zolo 2004\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/AddCollab?trackName=Cola",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"AddCollab"
+							],
+							"query": [
+								{
+									"key": "trackName",
+									"value": "Cola"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Play track (by name)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/Play?name=IS%20la%20M",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"Play"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "IS%20la%20M"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete track (by name)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/DeleteTrack?name=bebra",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"DeleteTrack"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "bebra"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Get all albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/GetAllAlbums",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"GetAllAlbums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get album by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/GetAlbum?albumName=Abu%20Bandit",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"GetAlbum"
+							],
+							"query": [
+								{
+									"key": "albumName",
+									"value": "Abu%20Bandit"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add new album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"t1\", \"t2\", \"t22\", \"asos\", \"intro\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/AddAlbum?artistName=Oxxy&albumName=Gorgorod",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"AddAlbum"
+							],
+							"query": [
+								{
+									"key": "artistName",
+									"value": "Oxxy"
+								},
+								{
+									"key": "albumName",
+									"value": "Gorgorod"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete album by name",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/DeleteAlbum?name=Abu%20Bandit",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"DeleteAlbum"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Abu%20Bandit"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Get all artists",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get artist by name",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add new artist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/AddArtist?name=Kimbra",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"AddArtist"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Kimbra"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete artist by name",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/StreamingDB/DeleteArtist?name=ivan%20zolo%202003",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"StreamingDB",
+								"DeleteArtist"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ivan%20zolo%202003"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chart",
+			"item": [
+				{
+					"name": "Get chart",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "https://localhost:7190/api"
+		}
+	]
+}
